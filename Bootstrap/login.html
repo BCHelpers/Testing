@@ -1,0 +1,262 @@
+    <!-- Generate forgot password page -->
+    <br>
+    <div class='container'>
+      <div class='page-header'>
+        <h2>My Account</h2>
+      </div>
+
+      <div class='col-xs-3' style='border-right: 1px solid'>
+
+        <div class='tabs' style='font-size: 20px; font-weight: bold'>
+          <ul id='myTab' class='nav nav-pills nav-stacked'><!--
+            <li> <img src='images/blankPhoto.jpg' style='width: 100%' class='img-responsive'></img></li>
+            <li class='active'><a href='#genInfo' data-toggle='tab'>General Information</a></li>
+            <li><a href='#' data-toggle='tab'>Card Information</a></li>< href='#payInfo' 
+            <li><a href='#' data-toggle='tab'>Transaction History</a></li>< href='#history' 
+            <li><a href='#' data-toggle='tab' ng-click='userInfo()'>Course Certifications</a></li><!-- href='#courseCert'-->
+          </ul>
+        </div>
+      </div>
+
+      <div class='col-xs-7'>
+        <div id='myTabContent' class='tab-content'>
+          <div id='genInfo' class='tab-pane fade in active'>
+            <h2 class='centered'>General Information</h2>
+            <hr>
+
+            <div class='row'>
+              <div class='col-lg-10'>
+
+                <form class="form-horizontal">
+                  <div class="form-group">
+                      <label for="name" class="control-label col-xs-2">Full Name</label>
+                      <div class="col-xs-5">
+                          <input type="email" class="form-control" id="name" placeholder="First Name" ng-model='account.first_name'>
+                      </div>
+                      <div class='col-xs-5'>
+                        <input type='name' class='form-control' placeholder='Last Name' ng-model='account.last_name'>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="inputEmail" class="control-label col-xs-2">Email</label>
+                      <div class="col-xs-10">
+                          <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model='account.email'>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="school" class="control-label col-xs-2">School</label>
+                      <div class="col-xs-10">
+                          <input class="form-control" id="school" placeholder="School" ng-model='account.school'>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="control-label col-xs-2">Academic Program</label>
+                      <div class="col-xs-10">
+                        <select class='form-control' ng-model='account.academic_program'>
+                          <option value='na'>Academic program</option>
+                          <option>High School</option>
+                          <option>Undergraduate</option>
+                          <option>Graduate</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="school" class="control-label col-xs-2">Graduation Year</label>
+                      <div class="col-xs-10">
+                        <select class="form-control" ng-model='account.graduation_year'>
+                          <option value="{{year}}" ng-repeat='year in range(1960, 2025)'>{{year}}</option>
+                        </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="school" class="control-label col-xs-2">Date of Birth</label>
+                      <div class="col-xs-3">
+                        <select class='form-control' ng-model='account.MoB'>
+                          <option value='1'>January</option>
+                          <option value='2'>February</option>
+                          <option value='3'>March</option>
+                          <option value='4'>April</option>
+                          <option value='5'>May</option>
+                          <option value='6'>June</option>
+                          <option value='7'>July</option>
+                          <option value='8'>August</option>
+                          <option value='9'>September</option>
+                          <option value='10'>October</option>
+                          <option value='11'>November</option>
+                          <option value='12'>December</option>
+                        </select>
+                      </div>
+
+                      <div class='col-xs-3'>
+                        <select class='form-control' ng-model='account.DoB'>
+                          <option value='{{day}}' ng-repeat='day in range(1,31)'>{{day}}</option>
+                        </select>
+                      </div>
+
+                      <div class='col-xs-4'>
+                        <select class="form-control" ng-model='account.YoB'>
+                          <option  ng-repeat='year in range(1925, 2015)' value="{{year}}">{{year}}</option>
+                        </select>
+                    </div>
+                  </div>
+              </form>
+            </div>
+          </div>
+
+            <div class='row'>
+              <div class='col-xs-12 centered'>
+                <hr>
+                <button class='btn btn-success' style='font-size: 20px; color: black;' ng-click='updateInfo()'>Update Profile</button>
+                <button ng-click='printInfo()'>Print info</button>
+              </div>
+            </div>
+          </div>
+
+          <div id='payInfo' class='tab-pane fade'>
+            <h2 class='centered'>Payment</h2>
+            <hr>
+
+            <div class='row'>
+              <div class='col-xs-12'>
+                <h3>Payment Methods <span class='pull-right glyphicon glyphicon-plus' style='color: green'></span></h3>
+
+                <hr>
+
+                <ul>
+                  <li>Example one<span class='pull-right glyphicon glyphicon-edit'></span></li>
+                  <li>Example two</li>
+                </ul>
+
+                <hr>
+                <h3>Receive Payment </h3>
+                <hr>
+
+                <h4>VISA OR SUCH<span class='pull-right glyphicon glyphicon-edit' style='color: green'></span></h4>
+
+                <hr>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div id='history' class='tab-pane fade'>
+            <h2>Transaction History</h2>
+            <hr>
+
+            <div class='row'>
+              <div class='col-xs-12'>
+                <h3 class='centered'>Tutoring</h3>
+                <hr>
+
+                <table class="table">
+                  <thead>
+                      <tr style='font-size: 20px'>
+                          <th>Date</th>
+                          <th>Student</th>
+                          <th>Price</th>
+                          <th>Time</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>4/05/15</td>
+                          <td>John Carter</td>
+                          <td>$20.34</td>
+                          <td>3:30 PM</td>
+                      </tr>
+                  </tbody>
+              </table>
+
+              <hr>
+
+              <h3 class='centered'>Learning</h3>
+              <hr>
+
+              <table class="table">
+                  <thead>
+                      <tr style='font-size: 20px'>
+                          <th>Date</th>
+                          <th>Tutor</th>
+                          <th>Price</th>
+                          <th>Time</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>4/05/15</td>
+                          <td>Carter John</td>
+                          <td>$20.34</td>
+                          <td>3:30 PM</td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+          </div>
+
+          </div>
+
+          <div id='courseCert' class='tab-pane fade'>
+            <h3>Your Certifications</h3>
+            <hr>
+
+            <div id="menu" style='font-size: 20px'>
+              <div class="panel list-group">
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#math" data-parent="#menu">Mathematics <span class="label label-info">3</span> </a>
+                <div id="math" class="sublinks collapse">
+                  <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> Differential Equations</a>
+                  <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> Linear Algebra</a>
+                  <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> Multivariable Calculus</a>
+                </div> 
+
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#hist" data-parent="#menu">History <span class="label label-info">2</span></a>
+                <div id="hist" class="sublinks collapse">
+                  <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> Modern History</a>
+                  <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> Cold War</a>
+                </div>
+
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#pending" data-parent="#menu">Pending Certifications <span class="label label-info">2</span></a>
+                <div id="pending" class="sublinks collapse">
+                  <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> Analysis</a>
+                  <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> Medieval History</a>
+                </div>
+              </div>
+            </div>
+
+            <div class='col-xs-12 centered'>
+              <a href='certification.html' class='btn btn-default'>Request Certification</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        $('#myTab a').click(function (e) {
+            var tab = $(this);
+            if(tab.parent('li').hasClass('active')){
+                window.setTimeout(function(){
+                    $(".tab-pane").removeClass('active');
+                    tab.parent('li').removeClass('active');
+                },1);
+            }
+        });
+      </script>
+
+    </div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61903187-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
